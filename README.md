@@ -18,6 +18,16 @@ git clone https://github.com/Ea12421/web-design ~/.claude/skills/web-design
 
 工作流：**理解需求 → 输出 `DESIGN.md`（确认）→ 生成代码 → 审计**。详见 [`SKILL.md`](SKILL.md)。
 
+## 可选：机械检测（detector）
+
+审计阶段可选用 [impeccable](https://github.com/pbakaus/impeccable) 的检测器对产物做一次**确定性扫描**（不依赖 AI 自觉）：
+
+```bash
+npx -y impeccable detect --json --gpt <文件 / 目录 / URL>
+```
+
+抓 CSS/HTML 层的 AI 味（烂大街字体 / 紫色渐变 / 弹跳缓动 / 跳级标题等），与本仓 `references/anti-slop.md`（文案 / 中文空话 / 布局）互补。需要 Node.js，无则自动跳过。
+
 ## 来源与致谢
 
 - 本仓库**基于 KAOPU-XiaoPu 的 web-design skill（MIT）**二次开发，原版权声明完整保留于 [`LICENSE`](LICENSE)。
